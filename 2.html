@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="tools.js"></script>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style: none;
+            float: left;
+        }
+        ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5000px;
+        }
+        img {
+            width: 400px;
+            display: block;
+        }
+        .box {
+            width: 400px;
+            margin: 100px auto;
+            border: 8px solid #4dc71f;
+            position: relative;
+            height: 125.5px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li><img src="./flash/1.jpg" alt=""></li>
+            <li><img src="./flash/2.jpg" alt=""></li>
+            <li><img src="./flash/3.jpg" alt=""></li>
+            <li><img src="./flash/4.jpg" alt=""></li>
+            <li><img src="./flash/1.jpg" alt=""></li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    var img=document.querySelector('img');
+    var ul=document.querySelector('ul');
+    var aimg=document.querySelectorAll('img');
+    var index=0;
+    setInterval(function () {
+        index++;
+        if(index==aimg.length){
+            index=1;
+            ul.style.left=0;
+        }
+        move(ul , "left" , -index*img.offsetWidth , 20);
+    },2000)
+</script>
